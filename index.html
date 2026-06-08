@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Para a Patrícia 💌</title>
+
+<!-- ===== SEO / Compartilhamento ===== -->
+<meta name="description" content="Vitor tem uma coisa pra te contar…" />
+<meta name="theme-color" content="#150810" />
+<meta property="og:title" content="Para a Patrícia 💌" />
+<meta property="og:description" content="Vitor tem uma coisa pra te contar…" />
+<meta property="og:image" content="assets/foto1.jpg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e9a6ad' d='M12 21s-7.5-4.6-10-9.2C.3 8.3 1.9 4.5 5.4 4.5c2 0 3.4 1.1 4.6 2.7C11.2 5.6 12.6 4.5 14.6 4.5c3.5 0 5.1 3.8 3.4 7.3C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E" />
+
+<!-- ===== Fontes ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   Paleta e variáveis  —  tema romântico, escuro e cinematográfico
+   ============================================================ */
+:root{
+  --wine-950:#150810;
+  --wine-900:#1d0c16;
+  --wine-800:#2a1320;
+  --rose:#e9a6ad;
+  --blush:#f3c8c4;
+  --rosegold:#e4b08a;
+  --gold:#e8c89a;
+  --cream:#f7ece6;
+  --cream-soft:rgba(247,236,230,.72);
+  --deep-red:#b8334d;
+  --shadow:0 30px 70px -25px rgba(0,0,0,.75);
+  --font-display:"Fraunces", serif;
+  --font-body:"Cormorant Garamond", serif;
+  --font-script:"Pinyon Script", cursive;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--wine-950);
+  color:var(--cream);
+  font-family:var(--font-body);
+  font-size:20px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Fundo atmosférico: brilhos radiais quentes + leve granulado */
+.bg-glow{position:fixed;inset:0;z-index:-3;pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 18% 12%, rgba(184,51,77,.28), transparent 60%),
+    radial-gradient(55% 45% at 85% 88%, rgba(228,176,138,.20), transparent 60%),
+    radial-gradient(80% 70% at 50% 50%, rgba(42,19,32,.6), transparent 70%),
+    linear-gradient(160deg,var(--wine-950),var(--wine-900) 55%,var(--wine-800));
+}
+.bg-grain{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   Corações flutuantes (decorativos, em todo o fundo)
+   ============================================================ */
+#hearts{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.heart-float{position:absolute;bottom:-40px;color:var(--rose);opacity:0;
+  animation:rise linear forwards;will-change:transform,opacity}
+@keyframes rise{
+  0%{transform:translateY(0) rotate(0deg) scale(.6);opacity:0}
+  12%{opacity:.55}
+  90%{opacity:.4}
+  100%{transform:translateY(-115vh) rotate(360deg) scale(1);opacity:0}
+}
+
+/* ============================================================
+   TELA DE ABERTURA (envelope) — toque libera a música
+   ============================================================ */
+#abertura{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:8vw;
+  background:radial-gradient(70% 60% at 50% 40%,rgba(42,19,32,.4),var(--wine-950));
+  transition:opacity 1s ease, visibility 1s ease}
+#abertura.hidden{opacity:0;visibility:hidden}
+.envelope{cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:28px;
+  animation:floaty 4.5s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.seal{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 30%,var(--deep-red),#7d1f33);
+  box-shadow:0 0 0 8px rgba(232,200,154,.12),0 0 45px rgba(184,51,77,.6),inset 0 -6px 18px rgba(0,0,0,.4);
+  position:relative;transition:transform .4s ease}
+.envelope:hover .seal{transform:scale(1.06)}
+.seal svg{width:54px;height:54px;fill:var(--blush);
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.15)}28%{transform:scale(1)}42%{transform:scale(1.1)}}
+.seal::after{content:"";position:absolute;inset:-8px;border-radius:50%;
+  border:1px dashed rgba(232,200,154,.35);animation:spin 22s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#abertura .para{font-family:var(--font-script);font-size:clamp(2.6rem,9vw,4.5rem);
+  color:var(--blush);line-height:1;text-shadow:0 4px 30px rgba(184,51,77,.5)}
+#abertura .toque{font-family:var(--font-display);font-style:italic;letter-spacing:.04em;
+  font-size:clamp(1rem,4vw,1.3rem);color:var(--cream-soft)}
+.pulse-cue{font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);opacity:.8;animation:fade 2.4s ease-in-out infinite}
+@keyframes fade{0%,100%{opacity:.3}50%{opacity:.9}}
+
+/* ============================================================
+   Layout geral das seções
+   ============================================================ */
+main{opacity:0;transition:opacity 1.4s ease}
+main.revealed{opacity:1}
+section{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:14vh 7vw;position:relative}
+.kicker{font-family:var(--font-display);font-style:italic;font-weight:300;
+  letter-spacing:.35em;text-transform:uppercase;font-size:.72rem;
+  color:var(--gold);margin-bottom:1.4rem}
+h1,h2{font-family:var(--font-display);font-weight:400;line-height:1.05}
+h1{font-size:clamp(3rem,13vw,7rem)}
+h2{font-size:clamp(2.1rem,8vw,4rem);margin-bottom:1.2rem}
+.lead{max-width:34ch;font-size:clamp(1.15rem,4.5vw,1.5rem);color:var(--cream-soft);
+  font-weight:400}
+.names{font-family:var(--font-script);color:var(--blush);
+  font-size:clamp(2.4rem,11vw,5rem);line-height:1;margin-top:.4rem;
+  text-shadow:0 6px 40px rgba(184,51,77,.45)}
+.amp{display:inline-block;color:var(--rosegold);transform:translateY(.06em)}
+
+/* Animação de entrada por seção */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.15s}.d2{transition-delay:.3s}.d3{transition-delay:.45s}.d4{transition-delay:.6s}
+
+/* Indicador de rolagem */
+.scroll-cue{position:absolute;bottom:4vh;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--cream-soft);
+  font-size:.7rem;letter-spacing:.25em;text-transform:uppercase}
+.scroll-cue .arrow{width:1px;height:42px;background:linear-gradient(var(--gold),transparent);
+  animation:slide 2s ease-in-out infinite}
+@keyframes slide{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* Divisor decorativo */
+.divider{display:flex;align-items:center;gap:14px;color:var(--rosegold);
+  margin:1.6rem 0;opacity:.7}
+.divider .line{width:60px;height:1px;background:currentColor}
+.divider svg{width:16px;height:16px;fill:currentColor}
+
+/* ============================================================
+   Contador (tempo desde o primeiro beijo)
+   ============================================================ */
+.counter{display:flex;gap:clamp(10px,4vw,34px);flex-wrap:wrap;justify-content:center;
+  margin-top:1.4rem}
+.unit{display:flex;flex-direction:column;align-items:center;min-width:64px}
+.unit .num{font-family:var(--font-display);font-size:clamp(2.2rem,9vw,3.6rem);
+  font-weight:400;color:var(--blush);font-variant-numeric:tabular-nums;line-height:1}
+.unit .lbl{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-top:.5rem}
+.date-pill{display:inline-block;margin-top:1.6rem;padding:.5rem 1.4rem;border-radius:999px;
+  border:1px solid rgba(232,200,154,.3);color:var(--cream-soft);font-style:italic;
+  font-size:1rem;letter-spacing:.02em}
+
+/* ============================================================
+   Carta
+   ============================================================ */
+.letter{max-width:46ch;font-size:clamp(1.2rem,4.6vw,1.55rem);line-height:1.85;
+  color:var(--cream);font-weight:400}
+.letter p{margin-bottom:1.2rem}
+.letter .sign{font-family:var(--font-script);font-size:clamp(2rem,8vw,3rem);
+  color:var(--blush);margin-top:.4rem}
+
+/* ============================================================
+   Galeria / Carrossel de fotos
+   ============================================================ */
+.gallery{width:min(560px,92vw);position:relative}
+.frame{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
+  border:1px solid rgba(232,200,154,.18);background:#000;aspect-ratio:4/5}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transform:scale(1.04);transition:opacity 1s ease,transform 6s ease}
+.frame img.active{opacity:1;transform:scale(1)}
+.frame::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(21,8,16,.55),transparent 45%)}
+.gal-btns{position:absolute;inset:0;display:flex;justify-content:space-between;
+  align-items:center;padding:0 6px}
+.gal-btns button{width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(21,8,16,.45);color:var(--cream);font-size:1.3rem;backdrop-filter:blur(6px);
+  display:grid;place-items:center;transition:background .3s,transform .3s;z-index:2}
+.gal-btns button:hover{background:rgba(184,51,77,.7);transform:scale(1.08)}
+.dots{display:flex;gap:9px;justify-content:center;margin-top:1.2rem}
+.dots span{width:8px;height:8px;border-radius:50%;background:rgba(247,236,230,.3);
+  cursor:pointer;transition:all .3s}
+.dots span.on{background:var(--blush);width:24px;border-radius:999px}
+
+/* ============================================================
+   Seção da música
+   ============================================================ */
+.vinyl{width:clamp(150px,40vw,210px);height:clamp(150px,40vw,210px);border-radius:50%;
+  background:repeating-radial-gradient(circle at center,#1a0c13 0 2px,#241019 2px 4px);
+  display:grid;place-items:center;position:relative;box-shadow:var(--shadow),0 0 60px rgba(184,51,77,.25);
+  margin-bottom:1.8rem}
+.vinyl::before{content:"";position:absolute;width:34%;height:34%;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--deep-red),#7d1f33)}
+.vinyl::after{content:"";position:absolute;width:7%;height:7%;border-radius:50%;background:var(--wine-950)}
+.vinyl.spin{animation:spin 6s linear infinite}
+.eq{display:flex;gap:5px;align-items:flex-end;height:34px;margin-top:1.2rem;justify-content:center}
+.eq span{width:5px;background:var(--rosegold);border-radius:3px;animation:bounce 1s ease-in-out infinite}
+.eq span:nth-child(2){animation-delay:.2s}.eq span:nth-child(3){animation-delay:.4s}
+.eq span:nth-child(4){animation-delay:.1s}.eq span:nth-child(5){animation-delay:.5s}
+.eq.paused span{animation-play-state:paused;height:6px!important}
+@keyframes bounce{0%,100%{height:8px}50%{height:34px}}
+.song-title{font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--blush)}
+.song-sub{color:var(--cream-soft);font-size:1rem}
+
+/* ============================================================
+   A grande pergunta
+   ============================================================ */
+#pergunta{gap:.4rem}
+.q-card{position:relative;width:min(620px,94vw);min-height:230px;
+  display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:center;margin-top:2.2rem}
+.btn{font-family:var(--font-display);font-size:1.25rem;padding:1rem 2.6rem;border-radius:999px;
+  border:none;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s;letter-spacing:.02em}
+.btn-sim{background:linear-gradient(135deg,var(--deep-red),#d9577a);color:#fff;
+  box-shadow:0 12px 35px -8px rgba(184,51,77,.8)}
+.btn-sim:hover{transform:scale(1.07)}
+.btn-nao{background:transparent;color:var(--cream-soft);border:1px solid rgba(247,236,230,.3)}
+
+/* Tela de comemoração */
+#festa{position:fixed;inset:0;z-index:60;display:none;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:8vw;
+  background:radial-gradient(70% 60% at 50% 45%,rgba(184,51,77,.30),transparent 70%),var(--wine-950);
+  opacity:0;transition:opacity 1s ease}
+#festa.show{display:flex;opacity:1}
+#festa h2{font-size:clamp(2.4rem,11vw,5.5rem)}
+#festa .names{margin-top:.6rem}
+#confetti{position:fixed;inset:0;z-index:59;pointer-events:none}
+
+/* Botão de controle de música (fixo) */
+#music-toggle{position:fixed;bottom:18px;right:18px;z-index:70;width:54px;height:54px;
+  border-radius:50%;border:1px solid rgba(232,200,154,.3);cursor:pointer;display:none;
+  place-items:center;background:rgba(21,8,16,.6);backdrop-filter:blur(8px);
+  box-shadow:0 8px 24px -6px rgba(0,0,0,.6);transition:transform .3s}
+#music-toggle.show{display:grid}
+#music-toggle:hover{transform:scale(1.1)}
+#music-toggle svg{width:24px;height:24px;fill:var(--blush)}
+
+/* player do youtube fica escondido — serve só como áudio */
+#yt-wrap{position:fixed;width:1px;height:1px;left:-9999px;top:-9999px;opacity:0;pointer-events:none}
+
+@media (max-width:600px){body{font-size:18px}section{padding:12vh 8vw}}
+
+/* Acessibilidade: respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.2s !important;
+  }
+  #hearts{display:none}
+  .vinyl.spin{animation:none}
+  .seal::after{animation:none}
+  .seal svg{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+<div class="bg-grain"></div>
+<div id="hearts"></div>
+
+<!-- player de áudio (YouTube, escondido) -->
+<div id="yt-wrap"><div id="yt-player"></div></div>
+
+<!-- ===================== ABERTURA ===================== -->
+<div id="abertura">
+  <div class="envelope" id="abrir">
+    <div class="seal">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 1.9 4.5 5.4 4.5c2 0 3.4 1.1 4.6 2.7C11.2 5.6 12.6 4.5 14.6 4.5c3.5 0 5.1 3.8 3.4 7.3C19.5 16.4 12 21 12 21z"/></svg>
+    </div>
+    <div class="para">Patrícia</div>
+    <div class="toque">Tenho uma coisa pra te contar…</div>
+    <div class="pulse-cue">toque para abrir</div>
+  </div>
+</div>
+
+<!-- ===================== EXPERIÊNCIA ===================== -->
+<main id="experiencia">
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="kicker reveal">Dia dos Namorados · 2026</p>
+    <h1 class="reveal d1">Oi, meu amor.</h1>
+    <p class="lead reveal d2" style="margin-top:1.4rem">Eu fiz essa página só pra você. Respira fundo e vem comigo.</p>
+    <div class="names reveal d3">Vitor <span class="amp">&amp;</span> Patrícia</div>
+    <div class="scroll-cue reveal d4"><span>role para baixo</span><span class="arrow"></span></div>
+  </section>
+
+  <!-- CONTADOR -->
+  <section id="tempo">
+    <p class="kicker reveal">O começo de tudo</p>
+    <h2 class="reveal d1">Um beijo mudou os meus dias</h2>
+    <p class="lead reveal d2">Desde aquele 24 de outubro, eu conto o tempo de um jeito diferente:</p>
+    <div class="counter reveal d3" id="counter">
+      <div class="unit"><span class="num" id="c-dias">0</span><span class="lbl">dias</span></div>
+      <div class="unit"><span class="num" id="c-horas">0</span><span class="lbl">horas</span></div>
+      <div class="unit"><span class="num" id="c-min">0</span><span class="lbl">minutos</span></div>
+      <div class="unit"><span class="num" id="c-seg">0</span><span class="lbl">segundos</span></div>
+    </div>
+    <span class="date-pill reveal d4">nosso primeiro beijo · 24/10/2025</span>
+  </section>
+
+  <!-- CARTA -->
+  <section id="carta">
+    <p class="kicker reveal">Do meu coração</p>
+    <div class="divider reveal d1"><span class="line"></span><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.3 8.3 1.9 4.5 5.4 4.5c2 0 3.4 1.1 4.6 2.7C11.2 5.6 12.6 4.5 14.6 4.5c3.5 0 5.1 3.8 3.4 7.3C19.5 16.4 12 21 12 21z"/></svg><span class="line"></span></div>
+    <div class="letter reveal d2">
+      <p>Patrícia, do seu sorriso ao jeito que você fala das coisas que ama, tudo em você me faz querer ficar perto.</p>
+      <p>Cada dia ao seu lado virou o meu lugar favorito. E eu não quero mais contar esses dias soltos — eu quero contar eles como <em>nossos</em>.</p>
+      <p class="sign">com todo o meu amor, Vitor</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria">
+    <p class="kicker reveal">Nós dois</p>
+    <h2 class="reveal d1">Alguns dos meus momentos preferidos</h2>
+    <div class="gallery reveal d2">
+      <div class="frame" id="frame">
+        <img src="assets/foto1.jpg" class="active" alt="nós dois">
+        <img src="assets/foto2.jpg" loading="lazy" alt="nós dois">
+        <img src="assets/foto3.jpg" loading="lazy" alt="nós dois">
+        <img src="assets/foto4.jpg" loading="lazy" alt="nós dois">
+        <img src="assets/foto5.jpg" loading="lazy" alt="nós dois">
+        <img src="assets/foto6.jpg" loading="lazy" alt="nós dois">
+        <img src="assets/foto7.jpg" loading="lazy" alt="nós dois">
+        <img src="assets/foto8.jpg" loading="lazy" alt="nós dois">
+        <div class="gal-btns">
+          <button id="prev" aria-label="anterior">‹</button>
+          <button id="next" aria-label="próxima">›</button>
+        </div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- MÚSICA -->
+  <section id="musica">
+    <p class="kicker reveal">A trilha sonora da gente</p>
+    <div class="vinyl spin reveal d1" id="vinyl"></div>
+    <h2 class="reveal d2" style="margin-bottom:.3rem">Nossa música</h2>
+    <p class="song-title reveal d2">Always — Bon Jovi</p>
+    <p class="song-sub reveal d3">na versão de piano · tocando agora pra você</p>
+    <div class="eq reveal d3" id="eq"><span></span><span></span><span></span><span></span><span></span></div>
+  </section>
+
+  <!-- PERGUNTA -->
+  <section id="pergunta">
+    <p class="kicker reveal">E é por isso que eu preciso te perguntar…</p>
+    <h2 class="reveal d1">Patrícia, quer namorar comigo?</h2>
+    <div class="q-card">
+      <button class="btn btn-sim" id="btn-sim">Sim, quero! 💍</button>
+      <button class="btn btn-nao" id="btn-nao">não</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FESTA ===================== -->
+<canvas id="confetti"></canvas>
+<div id="festa">
+  <p class="kicker">agora é oficial</p>
+  <h2>Ela disse SIM! 🥂</h2>
+  <div class="names">Vitor <span class="amp">&amp;</span> Patrícia</div>
+  <p class="lead" style="margin-top:1.6rem">O nosso "para sempre" começa hoje. Eu te amo. ❤️</p>
+</div>
+
+<!-- Controle de música -->
+<button id="music-toggle" aria-label="ligar/desligar música">
+  <svg id="icon-on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4zM14 3.2v2.1a7 7 0 010 13.4v2.1a9 9 0 000-17.6z"/></svg>
+  <svg id="icon-off" viewBox="0 0 24 24" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3zm18.3-1.3l-1.4-1.4L17 9.2 14.1 6.3l-1.4 1.4L15.6 10.6 12.7 13.5l1.4 1.4L17 12l2.9 2.9 1.4-1.4L18.4 10.6z"/></svg>
+</button>
+
+<script>
+/* ============================================================
+   1) Corações flutuantes
+   ============================================================ */
+(function(){
+  const layer=document.getElementById('hearts');
+  function spawn(){
+    const h=document.createElement('div');
+    h.className='heart-float';
+    h.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-10-9.2C.3 8.3 1.9 4.5 5.4 4.5c2 0 3.4 1.1 4.6 2.7C11.2 5.6 12.6 4.5 14.6 4.5c3.5 0 5.1 3.8 3.4 7.3C19.5 16.4 12 21 12 21z"/></svg>';
+    const size=8+Math.random()*22;
+    h.style.left=Math.random()*100+'vw';
+    h.style.transform='scale('+(size/22)+')';
+    h.style.animationDuration=(9+Math.random()*9)+'s';
+    h.style.opacity=.3+Math.random()*.4;
+    layer.appendChild(h);
+    setTimeout(()=>h.remove(),19000);
+  }
+  setInterval(spawn,650);
+})();
+
+/* ============================================================
+   2) Música — YouTube IFrame API
+      Começa em 0:55 e fica em loop. Só toca após o toque
+      na abertura (gesto do usuário libera o áudio em qualquer
+      aparelho, inclusive celular).
+   ============================================================ */
+const START_AT=55;          // segundo onde a música começa
+let player, musicReady=false, musicOn=true;
+
+const tag=document.createElement('script');
+tag.src="https://www.youtube.com/iframe_api";
+document.head.appendChild(tag);
+
+window.onYouTubeIframeAPIReady=function(){
+  player=new YT.Player('yt-player',{
+    width:'1',height:'1',
+    videoId:'dJ0_bEI_l7s',
+    playerVars:{autoplay:0,controls:0,playsinline:1,start:START_AT,rel:0,modestbranding:1},
+    events:{
+      'onReady':()=>{musicReady=true;},
+      'onStateChange':(e)=>{
+        // ao terminar, volta pro 0:55 e toca de novo (loop)
+        if(e.data===YT.PlayerState.ENDED){player.seekTo(START_AT);player.playVideo();}
+      }
+    }
+  });
+};
+
+function startMusic(){
+  if(musicReady && player){
+    player.unMute();
+    player.playVideo();
+  } else {
+    // se a API ainda não carregou, tenta de novo em instantes
+    setTimeout(startMusic,300);
+  }
+}
+
+/* ============================================================
+   3) Abertura -> revela a experiência + inicia música
+   ============================================================ */
+const abertura=document.getElementById('abertura');
+const main=document.getElementById('experiencia');
+const toggle=document.getElementById('music-toggle');
+let aberto=false;
+
+function abrir(){
+  if(aberto) return; aberto=true;
+  startMusic();                       // gesto do usuário -> áudio liberado
+  galleryStart();                     // só agora o carrossel começa
+  abertura.classList.add('hidden');
+  main.classList.add('revealed');
+  toggle.classList.add('show');
+  setTimeout(()=>{abertura.style.display='none';},1100);
+  observeSections();
+}
+document.getElementById('abrir').addEventListener('click',abrir);
+
+/* ============================================================
+   4) Reveal das seções ao rolar
+   ============================================================ */
+function observeSections(){
+  const els=document.querySelectorAll('.reveal');
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.18});
+  els.forEach(el=>io.observe(el));
+}
+
+/* ============================================================
+   5) Contador desde o primeiro beijo (24/10/2025)
+   ============================================================ */
+(function(){
+  const inicio=new Date(2025,9,24,0,0,0); // mês 9 = outubro
+  const d=document.getElementById('c-dias'),h=document.getElementById('c-horas'),
+        m=document.getElementById('c-min'),s=document.getElementById('c-seg');
+  function tick(){
+    let diff=Math.max(0,Date.now()-inicio.getTime());
+    const dias=Math.floor(diff/86400000); diff-=dias*86400000;
+    const horas=Math.floor(diff/3600000); diff-=horas*3600000;
+    const min=Math.floor(diff/60000); diff-=min*60000;
+    const seg=Math.floor(diff/1000);
+    d.textContent=dias; h.textContent=String(horas).padStart(2,'0');
+    m.textContent=String(min).padStart(2,'0'); s.textContent=String(seg).padStart(2,'0');
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+/* ============================================================
+   6) Galeria / carrossel
+   ============================================================ */
+let galleryStart;
+(function(){
+  const imgs=[...document.querySelectorAll('#frame img')];
+  const dotsBox=document.getElementById('dots');
+  let i=0, timer;
+  imgs.forEach((_,idx)=>{
+    const dot=document.createElement('span');
+    if(idx===0)dot.classList.add('on');
+    dot.addEventListener('click',()=>go(idx,true));
+    dotsBox.appendChild(dot);
+  });
+  const dots=[...dotsBox.children];
+  function go(n,manual){
+    imgs[i].classList.remove('active'); dots[i].classList.remove('on');
+    i=(n+imgs.length)%imgs.length;
+    imgs[i].classList.add('active'); dots[i].classList.add('on');
+    if(manual)reset();
+  }
+  function auto(){clearInterval(timer);timer=setInterval(()=>go(i+1),4500);}
+  function reset(){clearInterval(timer);auto();}
+  document.getElementById('next').addEventListener('click',()=>go(i+1,true));
+  document.getElementById('prev').addEventListener('click',()=>go(i-1,true));
+  // swipe no celular
+  let x0=null;const f=document.getElementById('frame');
+  f.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+  f.addEventListener('touchend',e=>{if(x0===null)return;
+    const dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>40)go(dx<0?i+1:i-1,true);x0=null;});
+  galleryStart=auto;
+})();
+
+/* ============================================================
+   7) Botão "não" foge / controle de música
+   ============================================================ */
+const btnNao=document.getElementById('btn-nao');
+const btnSim=document.getElementById('btn-sim');
+function fugir(){
+  const card=btnNao.closest('.q-card').getBoundingClientRect();
+  const bw=btnNao.offsetWidth, bh=btnNao.offsetHeight;
+  const maxX=Math.max(60,card.width-bw-10), maxY=Math.max(60,card.height-bh-10);
+  const x=(Math.random()*maxX)-maxX/2;
+  const y=(Math.random()*maxY)-maxY/2;
+  btnNao.style.position='relative';
+  btnNao.style.transform=`translate(${x}px,${y}px)`;
+  // o "sim" vai ficando mais convidativo (mas sem cobrir o "não")
+  const cur=parseFloat(btnSim.dataset.scale||'1')+0.04;
+  btnSim.dataset.scale=cur; btnSim.style.transform=`scale(${Math.min(cur,1.25)})`;
+}
+btnNao.addEventListener('mouseover',fugir);
+btnNao.addEventListener('click',e=>{e.preventDefault();fugir();});
+
+const eq=document.getElementById('eq');
+const vinyl=document.getElementById('vinyl');
+const iconOn=document.getElementById('icon-on'), iconOff=document.getElementById('icon-off');
+toggle.addEventListener('click',()=>{
+  if(!musicReady)return;
+  musicOn=!musicOn;
+  if(musicOn){player.playVideo();eq.classList.remove('paused');vinyl.classList.add('spin');
+    iconOn.style.display='block';iconOff.style.display='none';}
+  else{player.pauseVideo();eq.classList.add('paused');vinyl.classList.remove('spin');
+    iconOn.style.display='none';iconOff.style.display='block';}
+});
+
+/* ============================================================
+   8) "Sim" -> festa + confete de corações
+   ============================================================ */
+const festa=document.getElementById('festa');
+btnSim.addEventListener('click',()=>{
+  festa.classList.add('show');
+  confettiBurst();
+});
+
+(function(){
+  const cv=document.getElementById('confetti');
+  const ctx=cv.getContext('2d');
+  let parts=[],running=false;
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}
+  addEventListener('resize',size);size();
+  window.confettiBurst=function(){
+    parts=[];
+    const cores=['#b8334d','#e9a6ad','#e4b08a','#f3c8c4','#e8c89a','#fff'];
+    for(let k=0;k<160;k++){
+      parts.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height,
+        s:6+Math.random()*10,vy:2+Math.random()*4,vx:-2+Math.random()*4,
+        rot:Math.random()*6.28,vr:-.1+Math.random()*.2,
+        c:cores[Math.floor(Math.random()*cores.length)]});
+    }
+    if(!running){running=true;loop();}
+  };
+  function heart(x,y,s,rot,c){
+    ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(s/24,s/24);
+    ctx.fillStyle=c;ctx.beginPath();
+    ctx.moveTo(12,21);ctx.bezierCurveTo(2,13.4,.3,8.3,2,5.5);
+    ctx.bezierCurveTo(3.4,3.2,7.4,3.5,9.6,7.2);ctx.bezierCurveTo(11.8,3.5,15.8,3.2,17.2,5.5);
+    ctx.bezierCurveTo(18.9,8.3,17.2,13.4,12,21);ctx.fill();ctx.restore();
+  }
+  function loop(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    let alive=false;
+    parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=0.04;
+      if(p.y<cv.height+30)alive=true;heart(p.x,p.y,p.s,p.rot,p.c);});
+    if(alive)requestAnimationFrame(loop);else running=false;
+  }
+})();
+</script>
+</body>
+</html>
